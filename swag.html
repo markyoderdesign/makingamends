@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $(document).ready(function(){
+      var boxHeight = $(".box").height();
+      $(".box").hover(function(){
+          $(this).animate({
+          height: "350"
+          });
+      }).mouseleave(function(){
+          $(this).animate({
+              height: boxHeight
+          });
+      });
+  });
+  
+  
+  
+</script>
+<script>
+    var divItems = document.getElementsByClassName("box");
+    
+    function selected(item) {
+        this.clear();
+        item.style.backgroundColor = 'red';
+    }
+    
+    function clear() {
+        for(var i=0; i < divItems.length; i++) {
+            var item = divItems[i];
+            item.style.backgroundColor = 'white';
+        }
+    }
+</script>
+
+<style>
+
+* {
+    box-sizing: border-box;
+  }
+
+.column {
+  padding: 3%;
+    float: left;
+    width: 33%;
+    height: 2000px; /* Should be removed. Only for demonstration */
+  }
+  
+
+  .garmentBox {
+    float: left;
+    width: 100%;
+    height: 150px; /* Should be removed. Only for demonstration */
+    border: 1px solid blue;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.box {
+    width: 100%;
+    height: 175px;
+    background-color: white;
+    border: 1px solid blue;
+    float:left;
+  }
+    
+.box img{
+    
+    width: 100%;
+    height: auto;
+  }
+    
+input[type="checkbox"]{
+    vertical-align: middle;
+    
+    position: relative;
+    text-align:center;
+  }
+    
+h2 {
+      font-family: sans-serif;
+      font-size: 9px;
+      text-align: center;
+    
+    
+    
+    }
+    
+  h1 { 
+      font-family: sans-serif;
+      font-size: 7px;
+      font-weight:500;
+      text-align: center;
+  }
+    
+    
+  .highlight {
+    background: green;
+  }
+
+  .hyperspan
+{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:1;
+}
+
+.whatever{
+  background-color: red;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+#checkboxes input[type=checkbox]{
+  display: none;
+}
+
+#checkboxes input[type=checkbox]:checked + .whatever{
+  background-color: green;
+}
+</style>
+
+</head>
+<body>
+
+  <div class="column">
+    <div class="box" onclick=selected(this)>
+
+      <input type="checkbox" name=1 value="0">
+     
+
+     
+             <img src ="tops/0.png">
+     
+             <h2>White Button Down Shirt</h2>
+            <h1> 
+                 Linen
+             <br>China
+             <br>Uniqlo
+             <br>M</h1>
+
+     
+         </div>    <div class="box" onclick=selected(this)>
+
+      <input type="checkbox" name=2 value="0">
+     
+
+     
+             <img src ="tops/1.png">
+     
+             <h2>Black Stretchy Biker Top</h2>
+            <h1> 
+                 Polyamide.Polyester, Elastane 
+             <br>China
+             <br>Heat-Out
+             <br>L</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=3 value="0">
+     
+
+     
+             <img src ="tops/2.png">
+     
+             <h2>Shiny Jacket Shell</h2>
+            <h1> 
+                 
+             <br>
+             <br>
+             <br></h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=4 value="0">
+     
+
+     
+             <img src ="tops/3.png">
+     
+             <h2>Blue See-through Blouse</h2>
+            <h1> 
+                 
+             <br>
+             <br>Macshore Classics
+             <br></h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=5 value="0">
+     
+
+     
+             <img src ="tops/4.png">
+     
+             <h2>Navy Longsleeve Polo</h2>
+            <h1> 
+                 
+             <br>
+             <br>Architect
+             <br></h1>
+
+     
+         </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="box">
+
+      <input type="checkbox" name=6 value="0">
+     
+
+     
+             <img src ="tops/5.png">
+     
+             <h2>Dark Grey Button Down</h2>
+            <h1> 
+                 
+             <br>
+             <br>Pure Products
+             <br>XL</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=7 value="0">
+     
+
+     
+             <img src ="tops/6.png">
+     
+             <h2>Blue Striped Tunic</h2>
+            <h1> 
+                 Wool
+             <br>G
+             <br>Sci Moers
+             <br>XL</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=8 value="0">
+     
+
+     
+             <img src ="tops/7.png">
+     
+             <h2>Light Brown Button Down</h2>
+            <h1> 
+                 Polyester
+             <br>China
+             <br>Weather Proof
+             <br>M</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=9 value="0">
+     
+
+     
+             <img src ="tops/8.png">
+     
+             <h2>Dark Green Racer Back</h2>
+            <h1> 
+                 Nylon, Polyester, Spandex
+             <br>Sri Lanka
+             <br>Athleta
+             <br>XXS</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=10 value="0">
+     
+
+     
+             <img src ="tops/9.png">
+     
+             <h2>Grey Sweat Shirt</h2>
+            <h1> 
+                 Cotton, Polyester
+             <br>Mexico
+             <br>Hanes
+             <br>XXL</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=11 value="0">
+     
+
+     
+             <img src ="tops/10.png">
+     
+             <h2>Hoodie</h2>
+            <h1> 
+                 Polyester, Viscose, Wool
+             <br>
+             <br>Aqua
+             <br>18</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=12 value="0">
+     
+
+     
+             <img src ="tops/11.png">
+     
+             <h2>Jacket</h2>
+            <h1> 
+                 
+             <br>
+             <br>Angie
+             <br></h1>
+
+     
+         </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="box">
+
+      <input type="checkbox" name=13 value="0">
+     
+
+     
+             <img src ="tops/12.png">
+     
+             <h2>Baseball T-shirt</h2>
+            <h1> 
+                 Cotton, Polyester
+             <br>Bangladesh
+             <br>MTL Apparel
+             <br>M</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=14 value="0">
+     
+
+     
+             <img src ="tops/13.png">
+     
+             <h2>Tight Long Sleeve Polo</h2>
+            <h1> 
+                 Acrylic
+             <br>USA
+             <br>Express
+             <br>L</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=15 value="0">
+     
+
+     
+             <img src ="tops/14.png">
+     
+             <h2>Red Polo</h2>
+            <h1> 
+                 Cotton
+             <br>China
+             <br>J.Crew
+             <br>M</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=16 value="0">
+     
+
+     
+             <img src ="tops/15.png">
+     
+             <h2>Black and White Striped Button Down</h2>
+            <h1> 
+                 Silk
+             <br>China
+             <br>K Arrold
+             <br>L</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=17 value="0">
+     
+
+     
+             <img src ="tops/16.png">
+     
+             <h2>Striped Long Sleeve Button Down</h2>
+            <h1> 
+                 Cotton, Spandex
+             <br>Sri Lanka
+             <br>Banana Republic
+             <br>S</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=18 value="0">
+     
+
+     
+             <img src ="tops/17.png">
+     
+             <h2>Flannel Top</h2>
+            <h1> 
+                 
+             <br>
+             <br>
+             <br></h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=19 value="0">
+     
+
+     
+             <img src ="tops/18.png">
+     
+             <h2>Shiny Long Sleeve Button Down</h2>
+            <h1> 
+                 Cotton
+             <br>China
+             <br>J.Crew
+             <br>S</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=20 value="0">
+     
+
+     
+             <img src ="tops/19.png">
+     
+             <h2>Sweater</h2>
+            <h1> 
+                 Wool, Silk
+             <br>Spain
+             <br>Mossimo Dutti
+             <br>M</h1>
+
+     
+         </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="box">
+
+      <input type="checkbox" name=21 value="0">
+     
+
+     
+             <img src ="tops/20.png">
+     
+             <h2>Austin T-Shirt</h2>
+            <h1> 
+                 Polyester, Cotton, Rayon
+             <br>
+             <br>Canvas
+             <br>S</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=22 value="0">
+     
+
+     
+             <img src ="tops/21.png">
+     
+             <h2>Long Sleeve Top</h2>
+            <h1> 
+                 Cotton
+             <br>Missouri
+             <br>Harley Davidson
+             <br>M</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=23 value="0">
+     
+
+     
+             <img src ="tops/22.png">
+     
+             <h2>MTV T-Shirt</h2>
+            <h1> 
+                 
+             <br>
+             <br>MTV
+             <br>L</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=24 value="0">
+     
+
+     
+             <img src ="tops/23.png">
+     
+             <h2>Orange Hawaiian Button Down</h2>
+            <h1> 
+                 Silk
+             <br>China
+             <br>St.Johns Bay
+             <br>M</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=25 value="0">
+     
+
+     
+             <img src ="tops/24.png">
+     
+             <h2>Yellow Puffer Vest</h2>
+            <h1> 
+                 Polyester, Acrylic
+             <br>Vietnam
+             <br>Old Navy
+             <br>S</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=26 value="0">
+     
+
+     
+             <img src ="tops/25.png">
+     
+             <h2>Multi-colored Sweater Vest</h2>
+            <h1> 
+                 
+             <br>
+             <br>
+             <br></h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=27 value="0">
+     
+
+     
+             <img src ="tops/26.png">
+     
+             <h2>Black Bomber Jacket</h2>
+            <h1> 
+                 Polyester, Cotton, Nylon 
+             <br>Korea
+             <br>Members Only
+             <br>38</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=28 value="0">
+     
+
+     
+             <img src ="tops/27.png">
+     
+             <h2>White Hawaiian Button Down</h2>
+            <h1> 
+                 Silk
+             <br>China
+             <br>Tommy Bahama
+             <br>M</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=29 value="0">
+     
+
+     
+             <img src ="tops/28.png">
+     
+             <h2>Denim Jacket</h2>
+            <h1> 
+                 Cotton, Spandex
+             <br>China
+             <br>Kenneth Cole
+             <br>M</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=30 value="0">
+     
+
+     
+             <img src ="tops/29.png">
+     
+             <h2>Denim Jacket</h2>
+            <h1> 
+                 Cotton
+             <br>Bangladesh
+             <br>St.Johns Bay
+             <br>XL</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=31 value="0">
+     
+
+     
+             <img src ="tops/30.png">
+     
+             <h2>Dark Blue Long Sleeve Button Down</h2>
+            <h1> 
+                 Cotton
+             <br>Mauritius
+             <br>J. Crew
+             <br>XL</h1>
+
+     
+         </div><div class="box">
+
+      <input type="checkbox" name=32 value="0">
+     
+
+     
+             <img src ="tops/31.png">
+     
+             <h2>Striped Long Sleeve Button Down</h2>
+            <h1> 
+                 
+             <br>
+             <br>Express
+             <br></h1>
+
+     
+         </div>
+    </div>
+  </div>
+
+</body>
+</html>
